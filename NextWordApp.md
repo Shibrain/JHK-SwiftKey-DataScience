@@ -2,36 +2,65 @@ Next Word App
 ========================================================
 author: Ahmed Shibrian
 date: Firday, December 12th 2014
+transition: rotate
+transition-speed: slow
 
-First Slide
 ========================================================
+transition: rotate
+transition-speed: slow
+## Overview
+The Next Word App is a part of John Hopkins Data Science Specialization on Coursera
+The App is used to predict the next word after any english language text.
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+**This presentation will show:**
+- The prediction methodogy used  
+- How application functions
+- Issues to be solve in future
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+Before the presentation starts it would be good to tell that there is no perfect App.
 
-Slide With Code
+To try the App [Here You Go](https://shibrain.shinyapps.io/JHK-SwiftKey-DataScience/)
+
+
+The Prediction Model 
 ========================================================
+transition: rotate
+transition-speed: slow
+left: 40%
+**Data** 
+--
+  - The Model used Millions of records of Big Text Data from News, Blogs, and Twitter to generate the model.
+  - The Data had been filtred and put in a mixed model of Tri and 4N grams (3 words and 4 words) and frequencies counted.
+  
+***
 
+**Algorithms**
+--
+  - Probability of last word in gram calculated using [Naive Bayes](http://en.wikipedia.org/wiki/Naive_Bayes_classifier) algorithm.
+  - The App uses *Back off* algorithm when 4gram doesn't match.
+  - The App also uses [Approximate matching](http://en.wikipedia.org/wiki/Approximate_string_matching) (Fuzzy Matching) to match text pattern when no exact match found.
+  - By using approximation probabilites get bies. For that a weight used instead. 
 
-```r
-summary(cars)
-```
-
-```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
-```
-
-Slide With Plot
 ========================================================
+transition: rotate
+transition-speed: slow
+## The App Logic
 
-![plot of chunk unnamed-chunk-2](NextWordApp-figure/unnamed-chunk-2-1.png) 
+![The App Activity Diagram](appLogic.png)
+---
+
+Further Work
+========================================================
+transition: rotate
+transition-speed: slow
+- **More text cleaning**
+  - Although about 80% of the time consumed in data cleaning through natural language processing.
+  - There is a need for more.
+  - The more the data lookup is clean the better prediction.
+
+- **More data**
+  - Current model used about 2 million tweets, less than 1 million blogs, and less than 100K news article.
+  - Bigger Data could lead to more accurate predictions
+  
+- **Specialized prediction**
+  Because purpose matters 
